@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import jwtDecode from "jwt-decode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -18,7 +19,35 @@ import SubMenu from "./SubMenu.js";
 
 const SideBar = ({ isOpen, toggle }) => {
 
+  const [username, setUsername] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [referrals, setReferrals] = useState('');
 
+useEffect( ()=>{
+  let jwt = window.localStorage.getItem("jwt");
+    let result = jwtDecode(jwt);
+    setUsername(result.username)
+    // this.setState({username:result.username})
+    console.log(`The result is`, result);
+    console.log(`the current dashboard state is`, window.localStorage);
+
+    //  getRefs
+   
+      //  fetch(`http://localhost:3006/api/v1/getrefs/${result.id}`)
+      // .then(response => response.json())
+      // .then(res => {
+      //    setReferrals(res.data.rows[0].count)
+      //     // this.setState({referrals: });
+      //     console.log(res.data.rows[0].count);
+      
+      // })
+      
+
+    //   .catch(res => {
+    //     console.log(res)
+    
+    // })
+}, [username])
 
 
 return (
@@ -26,23 +55,23 @@ return (
     <div className="">
     </div>
     <div className="side-menu">
+      <div className=" pt-3">
     <Tilt className=" m-auto Tilt br2 shadow-2" options={{ max : 25 }} style={{ height: 70, width: 70 }} >
 						 	<div className="Tilt-inner"><img src="flashtokenlogo.jpg" alt=""/></div>
 						</Tilt>
+            </div>
       <Nav vertical className="list-unstyled pb-3">
-        <h5>Flash Token</h5>
-        <SubMenu title="Home" icon={faHome} items={submenus[0]} />
+      <p>HELLO! {username}</p>
         <NavItem>
-          <NavLink tag={Link} to={"/dashboard"}>
+          <NavLink tag={Link} to={"/profile"}>
             <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
             Dashboard
           </NavLink>
         </NavItem>
-        <SubMenu title="Pages" icon={faCopy} items={submenus[1]} />
         <NavItem>
-          <NavLink tag={Link} to={"/buy"}>
+          <NavLink tag={Link} to={"/sell"}>
             <FontAwesomeIcon icon={faImage} className="mr-2" />
-            Buy
+            Sell
           </NavLink>
         </NavItem>
         <NavItem>
@@ -52,9 +81,9 @@ return (
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink tag={Link} to={"/faq"}>
+          <NavLink tag={Link} to={"/settings"}>
             <FontAwesomeIcon icon={faQuestion} className="mr-2" />
-            FAQ
+            Profile
           </NavLink>
         </NavItem>
         <NavItem>

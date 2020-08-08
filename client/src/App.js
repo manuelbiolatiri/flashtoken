@@ -86,6 +86,7 @@ render() {
       
         <Switch>
           <Route path="/" exact component={Landing} />
+          <Route path="/" exact component={Landing} />
           <Route path="/sign_up" exact component={Register} />
           <Route path="/sign_in" exact component={Signin} />
           <Route path="/verify" exact component={Verify} />
