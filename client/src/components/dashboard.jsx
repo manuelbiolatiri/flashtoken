@@ -98,13 +98,13 @@ useEffect( ()=>{
           <p  className='f3 link dim black underline pa3 pointer'>Blog</p>
           </Link>
           <Link to="/signout">
-          <p onClick={this.handleClick} className='f3 link dim black underline pa3 pointer'>Signout</p>
+          <p onClick={this.handleClick()} className='f3 link dim black underline pa3 pointer'>Signout</p>
           </Link>
         </nav>
         <h1>HELLO! {username}</h1>
         <h1>No of Referrals: {referrals ? referrals : 'loading'}</h1>
         <button className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-        onClick={this.handleClick}>Sign out</button>
+        onClick={this.handleClick()}>Sign out</button>
         <Admin/>
       </div>
     );

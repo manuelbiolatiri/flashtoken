@@ -4,8 +4,8 @@ import { Container } from "reactstrap";
 import { Switch, Route } from "react-router-dom";
 
 import Topbar from "./Topbar";
-import Sell from "./Sell";
-import Dashboard from "./Dashboard";
+import SellCoin from "../../SellCoin.js";
+import Profile from "../../Profile";
 
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
   <Container
@@ -19,9 +19,9 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
       <Route exact path="/Pages" component={() => "Pages"} />
       <Route exact path="/faq" component={() => "FAQ"} />
       <Route exact path="/contact" component={() => "Contact"} />
-      <Route exact path="/sell" component={Sell} />
-      <Route exact path="/profile" component={Dashboard} />
-      <Route exact path="/Home-3" component={() => "Home-3"} />
+      {/* <Route exact path="/sell" component={Sell} /> */}
+      <Route exact path="/profile" component={Profile} />
+      <Route exact path="/profil/sell" component={SellCoin} />
       <Route exact path="/Page-1" component={() => "Page-1"} />
       <Route exact path="/Page-2" component={() => "Page-2"} />
       <Route exact path="/page-1" component={() => "page-1"} />

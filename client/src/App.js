@@ -6,6 +6,7 @@ import Register from './components/Register/Register';
 import Verify from './components/Verify/Verify';
 import Referrals from './components/Referrals/Referrals';
 import Profile from './helpers/Profile.js';
+// import SellCoin from './helpers/SellCoin.js';
 // import Logo from './components/Logo/Logo';
 // import Crypto from './components/Crypto/Crypto';
 // import Converts from './components/Converter/Converter';
@@ -93,6 +94,7 @@ render() {
           <Route path="/referrals/:id" exact component={Referrals} />
           <Route path="/home" exact component={Home} />
           <Route path="/profile" exact component={Profile} />
+          {/* <Route path="/profile/sell" exact component={SellCoin} /> */}
           <ProtectedRoute
         path={"/dashboard"}
         exact component={Dashboard}

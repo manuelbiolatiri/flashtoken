@@ -69,7 +69,7 @@ return (
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink tag={Link} to={"/sell"}>
+          <NavLink tag={Link} to={"/profile/sell"}>
             <FontAwesomeIcon icon={faImage} className="mr-2" />
             Sell
           </NavLink>

@@ -83,7 +83,7 @@ class Verify extends React.Component {
             </fieldset>
             <div className="">
               <input
-                onClick={this.onSubmitVerify}
+                onClick={this.onSubmitVerify()}
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                 type="submit"
                 value="Verify Account"
