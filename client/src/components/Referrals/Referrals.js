@@ -203,7 +203,7 @@ class Referrals extends React.Component {
             </fieldset>
             <div className="">
               <input
-                onClick={this.onSubmitSignIn()}
+                onClick={this.onSubmitSignIn}
                 className="button b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                 disabled={!this.state.formValid}
                 type="submit"

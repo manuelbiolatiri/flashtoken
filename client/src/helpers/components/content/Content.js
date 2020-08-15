@@ -4,7 +4,7 @@ import { Container } from "reactstrap";
 import { Switch, Route } from "react-router-dom";
 
 import Topbar from "./Topbar";
-import SellCoin from "../../SellCoin.js";
+// import SellCoin from "../../SellCoin.js";
 import Profile from "../../Profile";
 
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
@@ -21,7 +21,7 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
       <Route exact path="/contact" component={() => "Contact"} />
       {/* <Route exact path="/sell" component={Sell} /> */}
       <Route exact path="/profile" component={Profile} />
-      <Route exact path="/profil/sell" component={SellCoin} />
+      {/* <Route exact path="/profil/sell" component={SellCoin} /> */}
       <Route exact path="/Page-1" component={() => "Page-1"} />
       <Route exact path="/Page-2" component={() => "Page-2"} />
       <Route exact path="/page-1" component={() => "page-1"} />

@@ -17,7 +17,7 @@ class Body extends React.Component{
         this.BASE_URL = 'https://api.cryptonator.com/api/ticker/';
         this.chartRef = null;
         this.state = {
-            isMounted: false,
+            // isMounted: false,
             btcusd: '-',
             ltcusd: '-',
             ethusd: '-',
@@ -60,7 +60,7 @@ class Body extends React.Component{
     }
 
     componentDidMount() {
-        this.setState({isMounted: true});
+        // this.setState({isMounted: true});
         this.getDataFor('btc-usd', 'btcusd');
         this.getDataFor('ltc-usd', 'ltcusd');
         this.getDataFor('eth-usd', 'ethusd');
@@ -84,7 +84,7 @@ class Body extends React.Component{
 
     componentWillUnmount() {
         clearInterval( this.startUpdatingData());
-        this.setState({isMounted: false});
+        // this.setState({isMounted: false});
       }
 
 
@@ -154,11 +154,11 @@ class Body extends React.Component{
                 <div className="card custom-card mb-5 mb-xs-4">
                    <div className="card-body">
                             {
-                            // this.state.showChart ? 
-                            // <ReactFC 
-                            // {...this.chartConfigs}
-                            // dataSource={this.state.dataSource} 
-                            // onRender={this.getChartRef.bind(this)}/>: null
+                            this.state.showChart ? 
+                            <ReactFC 
+                            {...this.chartConfigs}
+                            dataSource={this.state.dataSource} 
+                            onRender={this.getChartRef.bind(this)}/>: null
                         }
                    </div>
                 </div>

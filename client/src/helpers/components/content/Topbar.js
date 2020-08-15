@@ -117,7 +117,7 @@ useEffect( ()=>{
     {/* <h1>HELLO! {username}</h1>
     <h1>No of Referrals: {referrals ? referrals : 'loading'}</h1>
     <button className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-    onClick={this.handleClick()}>Sign out</button> */}
+    onClick={this.handleClick}>Sign out</button> */}
     </div>
   );
 };
