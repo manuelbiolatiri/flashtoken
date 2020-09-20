@@ -468,38 +468,24 @@ const mailOption = {
             const  refs = `SELECT COUNT( id )
             FROM referrals WHERE id=$1`;
             const value = [username];
-            const refQuery = await pool.query(refs, value,(err, data) => {
-                if (!refQuery) {
-                    return res.status(400).json({
+            const refQuery = await pool.query(refs, value, (err, data) => {
+                if(err){
+                    res.status(400).json({
                         status: 'error',
-                        error: 'no referrals found'
-                    });
-                } else if (refQuery.rows[0]){
-                    if(err){
-                        res.status(400).json({
-                            status: 'error',
-                            message: 'referrals failed',
-                            data
-                        })
-                    }else{
-                    res.status(201).json({
-                        status: 'success',
-                        message: 'referrals gotten',
+                        message: 'referrals failed',
                         data
                     })
-                }
-                }
-            } )
-
+                }else{
+                res.status(201).json({
+                    status: 'success',
+                    message: 'referrals gotten',
+                    data
+                })
+            }
+            });
             
-            
-        }
-        catch (err) {
-            res.status(400).json({
-                status: 'error',
-                message: 'didnt make it to the db',
-                data: err
-            })
+        } catch (e) {
+            console.log(e)
         };
     },
 

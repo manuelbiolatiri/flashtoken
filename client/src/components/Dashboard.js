@@ -31,6 +31,8 @@ useEffect( ()=>{
       .then(response => response.json())
       .then(res => {
         console.log(res)
+        console.log(res.data)
+        console.log(res.status)
         if (res.error){
           console.log('1')
           console.log(setReferrals(0))
